@@ -20,7 +20,6 @@ class Member < ApplicationRecord
   validates :full_name, length:{maximum: 20}
   validates :email, email: {allow_blank: true}
 
-
   class << self
     def search(query) # queryの文字をname or full_nameに検索をかけて昇順にしたものをインスタンスに返す
       rel = order('number')

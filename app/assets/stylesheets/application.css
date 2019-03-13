@@ -170,6 +170,10 @@ ul.toolbar li:not(:last-child):after {
 }
 
 /* サイドバー */
+p.alert{
+  font-size: 12px;
+}
+
 form#login-form {
   font-size: 12px;
 }

@@ -1,5 +1,16 @@
 <%= image_tag "logo.gif", size: "272x48", alt: "Morning Glory "%>
-<div style="float :right; padding-top:15px;"><%= l(Time.current, format: :long) %></div>
+<% if current_member %>
+  <ul class="account-menu">
+    <%= current_member.name + "さん" %>
+    <%= menu_link_to "ログアウト", :session,
+    method: :delete, data:{confirm: "ログアウトしますか?" } %>
+    <div style="padding-right:10px;"><%= l(Time.current, format: :long) %></div>
+  </ul>
+<% else %>
+    <div style="float:right; padding-right:8px; padding-top:15px;"><%= l(Time.current, format: :long) %></div>
+<% end %>
+
+
 
 <nav class="menubar">
   <ul>
