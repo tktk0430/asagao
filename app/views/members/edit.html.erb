@@ -6,6 +6,6 @@
 
 <div class="toolbar"><%= link_to '会員の詳細に戻る', @member %> / <%= link_to '会員一覧に戻る', :members %></div>
 <%= form_for @member do |form| %>
-  <%= render "form", form: form %>
+  <%= render "shared/member_form", form: form %>
   <div><%= form.submit %></div>
 <% end %>

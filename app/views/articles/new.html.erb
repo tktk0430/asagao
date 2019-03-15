@@ -1,0 +1,9 @@
+<% @page_title = "新規投稿"%>
+<h1><%= @page_title %></h1>
+
+<p><%= link_to '記事一覧に戻る', :articles %></p>
+
+<%= form_for @article do |form| %>
+  <%= render 'form', form:form %>
+  <div><%= form.submit %></div>
+<% end %>

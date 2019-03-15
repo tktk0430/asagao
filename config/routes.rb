@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   end
 
   resource :session, only: [:create, :destroy]
+  resource :account, only: [:show, :edit, :update]
+  resource :password, only: [:show, :edit, :update]
+  resources :articles
 end

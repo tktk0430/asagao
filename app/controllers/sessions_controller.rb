@@ -1,18 +1,21 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   def create
-    member=Member.find_by(name:params[:name])
+    member = Member.find_by(name: params[:name])
     if member&.authenticate(params[:password])
-      session[:member_id]=member.id
-      flash.notice="ログインしました"
+      session[:member_id] = member.id
+      flash.notice = 'ログインしました'
     else
-      flash.alert="名前とパスワードが一致しません"
+      flash.alert = '名前とパスワードが一致しません'
     end
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def destroy
     session.delete(:member_id)
-    flash.notice="ログアウトしました"
-    redirect_to "/"
+    flash.notice = 'ログアウトしました'
+    redirect_to '/'
   end
 end
+# ログイン処理をコントロールする。session情報をcreate(ログイン), destroy(ログアウト)

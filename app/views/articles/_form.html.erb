@@ -1,0 +1,35 @@
+<%= render 'shared/errors', obj:@article %>
+
+<table class="attr">
+  <tr>
+    <th><%= form.label :title %></th>
+    <td><%= form.text_field :title %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :body %></th>
+    <td><%= form.text_area :body, rows: 10, cols: 45 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :released_at, for: "article_released_at_2i" %></th>
+    <td><%= form.datetime_select :released_at %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :expired_at, for: "article_expired_at_1i"%></th>
+    <td>
+    <div>
+      <%= form.check_box :no_expiration %>
+      <%= form.label :no_expiration %>
+    </div>
+    <div>
+      <%= form.datetime_select :expired_at %>
+    <div>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :member_only %></th>
+    <td>
+      <%= form.check_box :member_only %>
+      <%= form.label :member_only %>
+    </td>
+  </tr>
+</table>
