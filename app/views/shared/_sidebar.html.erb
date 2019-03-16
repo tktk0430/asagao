@@ -3,6 +3,8 @@
 <h2>最新ニュース</h2>
 <% articles=Article.visible.order(released_at: :desc).limit(5) %>
 <% articles=articles.open_to_the_public unless current_member %>
+
+
 <ul>
   <% articles.each do |article| %>
     <li><%= link_to article.title, article %></li>
@@ -10,8 +12,10 @@
 </ul>
 
 <h2>会員のブログ</h2>
-<ul>
-  <% 5.times do |i| %>
-    <li><%= link_to 'ブログの見出し', "#" %></li>
+  <% entries=Entry.readable_for(current_member).order(posted_at: :desc).limit(5)%>
+  <ul>
+  <% entries.each do |entry| %>
+    <li><%= link_to entry.title, entry %></li>
   <% end %>
-</ul>
+  </ul>
+
