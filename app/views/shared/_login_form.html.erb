@@ -13,3 +13,9 @@
     <input type="submit" value="ログイン">
   </div>
 <% end %>
+<%= form_tag :session, id: "login_form" do %>
+  <div>
+    <% @test_user_login = true %>
+    <input type="submit" value="機能だけ見る" name="test_user">
+  </div>
+<% end %>
