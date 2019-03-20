@@ -48,6 +48,7 @@ group :development, :test do
   gem 'rubocop', require: false
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.6'
+  gem 'minitest-rails'
 end
 
 group :development do

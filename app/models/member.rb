@@ -2,6 +2,7 @@
 
 class Member < ApplicationRecord
   has_secure_password
+  validates :password, presence: true
   has_many :entries, dependent: :destroy
   
   validates :number, presence: true,
@@ -22,7 +23,7 @@ class Member < ApplicationRecord
   validates :email, email: { allow_blank: true }
 
   attr_accessor :current_password
-  validates :password, presence: { if: :current_password }
+  #validates :password, presence: {if: :current_password}
 
   class << self
     def search(query) # queryの文字をname or full_nameに検索をかけて昇順にしたものをインスタンスに返す
